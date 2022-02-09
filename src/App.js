@@ -1,8 +1,14 @@
 import React from 'react';
+import { List, InputItem } from 'antd-mobile';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const handleChange = (e) => {
+    console.log(e.target.value)
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +24,14 @@ function App() {
         >
           Learn React
         </a>
+        <input type="text" onChange={handleChange}/> 
+        <InputItem
+            type={'number'}
+            placeholder="start from right"
+            clear
+            onChange={(v) => { console.log('onChange', v); }}
+            onBlur={(v) => { console.log('onBlur', v); }}
+          >数字</InputItem>
       </header>
     </div>
   );
